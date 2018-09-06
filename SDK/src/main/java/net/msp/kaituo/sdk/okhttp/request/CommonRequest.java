@@ -31,7 +31,23 @@ public class CommonRequest {
         }
         //通过请求构件类的build方法获取到真正的请求体对象
         FormBody mFormBody = mFromBodyBuild.build();
-
         return new Request.Builder().url(url).post(mFormBody).build();
+    }
+
+    /**
+     * @param url
+     * @param params
+     * @return 通过传入的参数返回一个个get类型的请求
+     */
+    public static Request createGetRequest (String url,RequestParams params){
+        StringBuilder urlBuilder = new StringBuilder(url).append("?");
+        if (params != null){
+            for (Map.Entry<String,String> entry : params.urlParams.entrySet()){
+                urlBuilder.append(entry.getKey()).append("=")
+                        .append(entry.getValue()).append("&");
+            }
+        }
+        return new Request.Builder().url(urlBuilder.substring(0,urlBuilder.length()-1))
+                .get().build();
     }
 }
