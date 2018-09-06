@@ -3,11 +3,10 @@ package net.msp.kaituo.sdk.okhttp.response;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.youdu.okhttp.exception.OkHttpException;
-import com.youdu.okhttp.listener.DisposeDataHandle;
-import com.youdu.okhttp.listener.DisposeDataListener;
-import com.youdu.okhttp.listener.DisposeHandleCookieListener;
-import com.youdu.adutil.ResponseEntityToModule;
+import net.msp.kaituo.sdk.adutil.ResponseEntityToModule;
+import net.msp.kaituo.sdk.okhttp.exception.OkHttpException;
+import net.msp.kaituo.sdk.okhttp.listener.DisposeDataHandle;
+import net.msp.kaituo.sdk.okhttp.listener.DisposeDataListener;
 
 import org.json.JSONObject;
 
